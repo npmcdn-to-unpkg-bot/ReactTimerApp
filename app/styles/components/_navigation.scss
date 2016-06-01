@@ -10,4 +10,7 @@
     display: inline;
     padding: 0;
   }
+  .active-link, .active-link:hover {
+    font-weight: bold;
+  }
 }
