@@ -1,6 +1,8 @@
 var React = require('react');
+
 var Clock = require('Clock');
 var CountdownForm = require('CountdownForm');
+var Controls = require('Controls');
 
 var Countdown = React.createClass({
   startTimer: function() {
@@ -10,9 +12,6 @@ var Countdown = React.createClass({
       this.setState({
         count: newCount >= 0 ? newCount : 0
       });
-      if (newCount === 0) {
-        clearInterval(this.timer);
-      }
     }, 1000);
   },
   getInitialState: function() {
@@ -44,6 +43,7 @@ var Countdown = React.createClass({
       <div className="text-center">
         <Clock totalSeconds={count} />
         <CountdownForm onSetCountdown={this.handleonSetCountdown} />
+        <Controls countdownStatus="paused"/>
       </div>
     )
   }
